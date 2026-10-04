@@ -16,7 +16,6 @@ const auth = (req, res, next) => {
 app.get('/', (req, res) => res.json({ status: 'API de Estoque Online' }));
 
 app.get('/fornecedores', (req, res) => res.json(fornecedores));
-
 app.post('/fornecedores', auth, (req, res) => {
   const { nome, cnpj } = req.body;
   if (!nome) return res.status(400).json({ erro: 'Nome e CNPJ obrigatórios' });
