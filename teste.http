@@ -1,0 +1,34 @@
+### 1. Testar se a API está online
+GET http://localhost:3000/
+
+### 2. Consultar Lista de Produtos
+GET http://localhost:3000/produtos
+
+### 3. Cadastrar Novo Produto
+POST http://localhost:3000/produtos
+Authorization: Bearer token-secreto-123
+Content-Type: application/json
+
+{
+  "nome": "Biscoito Recheado 140g",
+  "categoriaId": 2,
+  "preco": 3.50,
+  "quantidadeEstoque": 30,
+  "estoqueMinimo": 10,
+  "fornecedorId": 1
+}
+
+### 4. Realizar uma Venda (Baixa no Estoque)
+POST http://localhost:3000/vendas
+Authorization: Bearer token-secreto-123
+Content-Type: application/json
+
+{
+  "itens": [
+    { "produtoId": 1, "quantidade": 2 }
+  ]
+}
+
+### 5. Cancelar Venda (RN01 e RN02)
+DELETE http://localhost:3000/vendas/1/cancelar
+Authorization: Bearer token-secreto-123
