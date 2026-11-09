@@ -1,13 +1,15 @@
 {
   "dependencies": {
-    "express": "^5.2.1"
+    "dotenv": "^18.0.10",
+    "express": "^5.2.1",
+    "mongodb": "^7.8.0"
   },
   "name": "mateus_felipe",
   "version": "1.0.0",
   "description": "",
   "main": "cevcl.js",
   "scripts": {
-   "db:up": "docker start mongo-tarefas || docker run -d --name mongo-tarefas -p 127.0.0.1:27017:27017 -v mongo-tarefas-data:/data/db mongo:8",
+    "db:up": "docker start mongo-tarefas || docker run -d --name mongo-tarefas -p 127.0.0.1:27017:27017 -v mongo-tarefas-data:/data/db mongo:8",
     "db:down": "docker stop mongo-tarefas",
     "db:logs": "docker logs -f mongo-tarefas",
     "db:reset": "docker rm -f mongo-tarefas; docker volume rm mongo-tarefas-data",
